@@ -1,0 +1,9 @@
+Requires docker-compose >=1.8.0 ? (whatever supports compose file format v2)
+
+This site is a wordpress, backed by a mysql DB.
+Both are provided by pre-built images on dockerhub.
+Wordpress stores both its data (posts / pages) and metadata (theme info etc) in its db, so no customisation of the wordpress code nor any additional files are required in the wp container.
+The only thing that needs to persist these containers is the mysql data in ./db
+
+MySQL passwords are in the docker compose file (mysql runs in an isolated docker network so that's fine, barring a Confused Deputy Problem)
+Wordpress admin account (salts in the db): admin/<redacted>
